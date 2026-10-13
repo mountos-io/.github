@@ -33,4 +33,29 @@ Mount it natively on macOS, Windows, Linux, and Kubernetes, or reach it over S3 
 
 Product, use-case, and documentation pages return Markdown when a client sends `Accept: text/markdown`.
 
+## Install
+
+macOS and Linux:
+
+```sh
+curl -fsSL https://mountos.sh/install | bash
+```
+
+Windows (PowerShell):
+
+```powershell
+Invoke-WebRequest https://mountos.sh/install/install.ps1 -OutFile mountos.ps1; .\mountos.ps1
+```
+
+On macOS and Windows the installer adds the full client bundle (desktop app and `mountos` CLI). On Linux it installs the `mountos` CLI. It detects platform and architecture and verifies the SHA-256 checksum before it extracts.
+
+Install a specific version, or only the CLI:
+
+```sh
+curl -fsSL https://mountos.sh/install | bash -s -- --pkg mountos-cli --version 1.2.3
+```
+
+Add `--list` to see available versions. Server services ship as e `--pkg mountos-dataserv`. Full options:[mountos.io/docs/download](https://mountos.io/docs/download).
+
+
 Contact: [mountos.io/contact](https://mountos.io/contact) or support@mountos.io
